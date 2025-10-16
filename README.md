@@ -1,4 +1,9 @@
 # Example app for CI Hexlet course
+# Hexlet CI App
+
+![CI](https://github.com/maestro-lab/hexlet-ci-app/actions/workflows/ci.yml/badge.svg)
+
+... остальное содержимое README ...
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
 
