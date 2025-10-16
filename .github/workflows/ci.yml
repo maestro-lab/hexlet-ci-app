@@ -1,3 +1,8 @@
+git clone https://github.com/ваш-username/hexlet-ci-app.git
+cd hexlet-ci-app
+
+mkdir -p .github/workflows
+cat > .github/workflows/ci.yml << 'EOF'
 name: CI
 
 on:
@@ -13,6 +18,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
     - name: Setup project
       run: make setup
       
@@ -21,3 +31,12 @@ jobs:
       
     - name: Run linter
       run: make lint
+      
+    - name: Hello from Hexlet
+      uses: hexlet-components/hello-from-hexlet-action@release
+EOF
+
+
+git add .github/workflows/ci.yml
+git commit -m "Add complete CI workflow with Node.js setup and Hexlet action"
+git push origin main
